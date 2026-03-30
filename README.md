@@ -7,7 +7,7 @@
 
 ---
 
-## 📋 Table of Contents
+## * Table of Contents
 
 1. [Project Overview](#project-overview)
 2. [Chosen Software](#chosen-software)
@@ -21,7 +21,7 @@
 
 ---
 
-## 📖 Project Overview
+## * Project Overview
 
 This capstone project is a comprehensive audit of an open-source software project. It combines philosophical analysis with practical Linux shell scripting to demonstrate understanding of open-source principles, licensing, governance, and system administration.
 
@@ -33,7 +33,7 @@ The project consists of two main components:
 
 ---
 
-## 🖥️ Chosen Software: LibreOffice
+## * Chosen Software: LibreOffice
 
 LibreOffice is a free and open-source office productivity suite. It was born in 2010 when the OpenOffice.org community forked the project in response to governance concerns following Oracle's acquisition of Sun Microsystems. Today, it is maintained by The Document Foundation, a non-profit organization that ensures the software remains community-driven and free from corporate control.
 
@@ -50,7 +50,7 @@ LibreOffice is a free and open-source office productivity suite. It was born in 
 
 ---
 
-## 📜 Scripts Overview
+## * Scripts Overview
 
 | Script | Filename | Purpose | Key Concepts |
 |--------|----------|---------|--------------|
@@ -62,7 +62,7 @@ LibreOffice is a free and open-source office productivity suite. It was born in 
 
 ---
 
-## 🔧 Installation & Dependencies
+## * Installation & Dependencies
 
 ### Operating System Requirements
 
