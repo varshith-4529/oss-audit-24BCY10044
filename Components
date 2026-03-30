@@ -1,0 +1,122 @@
+
+---
+
+## COMPONENT 3: PROJECT REPORT PDF
+
+Below is the content for your project report. Copy this into a Word document, format it properly, and save as PDF.
+
+---
+
+# The Open Source Audit
+
+## A Capstone Project for OSS NGMC Course
+
+---
+
+**Student Name:** [Your Full Name]  
+**Registration Number:** [Your Registration Number]  
+**Slot:** [Your Slot]  
+**Date of Submission:** March 31, 2026
+
+---
+
+## 1. Introduction
+
+Most of the software that powers the modern world—the servers that run websites, the tools that developers use every day, the operating systems inside supercomputers and smartphones—was not built by a single company and sold for profit. It was built openly, shared freely, and improved collectively. That is the essence of open source.
+
+This project examines one such piece of software: LibreOffice. This report conducts a structured audit of LibreOffice across multiple dimensions: its philosophical origins, its license and ethics, its footprint on a Linux system, its place in the FOSS ecosystem, and a critical comparison with its proprietary alternatives. Alongside this report, five shell scripts demonstrate practical Linux skills that connect to the philosophy of sharing and transparency.
+
+---
+
+## Part A: Origin and Philosophy
+
+### A1. The Problem This Software Was Created to Solve
+
+The story of LibreOffice begins not in 2010 when it was forked, but in the late 1990s with a problem that affected millions of users worldwide: the dominance of Microsoft Office.
+
+In the late 1990s, Microsoft Office was the undisputed standard for office productivity. It was installed on hundreds of millions of computers, and its file formats—.doc, .xls, .ppt—had become de facto standards. This created a significant problem for individuals, educational institutions, and governments, especially in developing countries. Microsoft Office was expensive, costing hundreds of dollars per license. It ran only on Windows and macOS, leaving Linux users with no viable option. Most critically, its file formats were proprietary, meaning documents created in Word could only be reliably opened in Word. If you could not afford Microsoft Office, you were effectively locked out of participating fully in the digital economy.
+
+In 1999, Sun Microsystems acquired a German company called Star Division, which had built a competing office suite called StarOffice. Sun made a strategic decision that surprised the industry: it open-sourced the codebase under the name OpenOffice.org. This was the first credible, free, open-source alternative to Microsoft Office. It could read and write Microsoft files, ran on Linux, Windows, and macOS, and was quickly adopted by millions. It was a success story—on the surface.
+
+Beneath the surface, however, a structural problem existed. Sun required contributors to sign a Joint Copyright Assignment agreement, meaning any code volunteers wrote became jointly owned by Sun. The company controlled the release schedule, roadmap, and feature decisions. For years, the community tolerated this arrangement because Sun was seen as a relatively benign steward.
+
+Everything changed in 2010 when Oracle acquired Sun Microsystems. Oracle had a reputation as an aggressive, commercially-minded company that viewed open-source projects primarily as commercial assets. Within months, the community saw signs that Oracle would not be a trustworthy steward. Oracle launched a commercial product called Oracle Open Office—essentially the community's work with branding and a support contract—making the community's unpaid labor a direct revenue source. Communication from Oracle became sparse and dismissive. Most alarmingly, Oracle filed a lawsuit against Google over Java, signaling that it was willing to use intellectual property aggressively.
+
+The question the community faced was no longer technical but philosophical: can we trust Oracle with this project? The copyright assignment clause—which had always been uncomfortable—now felt genuinely dangerous. The rights volunteers had signed away to Sun now belonged to Oracle.
+
+In September 2010, a group of prominent OpenOffice.org contributors announced the formation of The Document Foundation and a new project called LibreOffice. Their founding manifesto was explicit: The Document Foundation would be an independent, non-profit foundation with meritocratic governance. No single company would control it. No copyright assignment would be required—contributors would retain ownership of their own code. Decisions would be made transparently by an elected steering committee.
+
+LibreOffice was born not from a technical failure but from a governance crisis. It was created to solve a problem that no code could fix: the problem of trust, control, and who gets to decide the direction of software that millions depend on.
+
+### A2. The License - What It Actually Says
+
+LibreOffice is licensed under the Mozilla Public License version 2.0 (MPL 2.0). I accessed the full license text from the LibreOffice GitHub repository and the official MPL website to understand its terms.
+
+**The Four Freedoms of Free Software**
+
+The Free Software Foundation defines four essential freedoms that software must grant to be considered "free software":
+
+1. **Freedom 0:** The freedom to run the program for any purpose.
+2. **Freedom 1:** The freedom to study how the program works and change it to make it do what you wish. Access to source code is a precondition.
+3. **Freedom 2:** The freedom to redistribute copies so you can help your neighbor.
+4. **Freedom 3:** The freedom to distribute copies of your modified versions to others. By doing this, you can give the whole community a chance to benefit from your changes. Access to source code is a precondition.
+
+**Does LibreOffice's License Grant All Four Freedoms?**
+
+Yes. The MPL 2.0 grants all four freedoms. The source code is available, users can modify it, and they can redistribute both original and modified versions. However, there is a nuance: the MPL 2.0 is a "file-level copyleft" license, meaning that modifications to MPL-licensed files must also be made available under the MPL, but files added to the project can be under other licenses, including proprietary ones, as long as they do not alter the MPL files.
+
+**Can a Company Take This Software, Modify It, and Sell It Without Sharing Their Changes?**
+
+No and yes, depending on what they modify. Under MPL 2.0, if a company modifies an existing MPL-licensed file, they must share those changes under the MPL. However, if they add entirely new files that do not modify existing MPL-licensed code, those new files can be kept proprietary. This is different from the GPL, which would require the entire combined work to be shared. This makes MPL more business-friendly while still protecting the core codebase.
+
+**The Difference Between GPL and MIT Licensing**
+
+The GPL (GNU General Public License) is a strong copyleft license. It requires that any distribution of modified versions must also be under the GPL, ensuring that the software remains free and open forever. The MIT License is a permissive license. It allows anyone to use, modify, and distribute the software, even in proprietary products, with almost no conditions except retaining the original copyright notice.
+
+If I were building something I wanted to remain free forever, I would choose the GPL. If I were building a library that I wanted to be adopted as widely as possible—even by proprietary software—I would choose the MIT License.
+
+**'Free as in Free Beer' vs 'Free as in Freedom'**
+
+"Free as in free beer" refers to zero cost. "Free as in freedom" refers to liberty—the ability to use, study, modify, and share. LibreOffice is free in both senses. It costs nothing to download, and the MPL grants users the freedom to control their own copy. This distinction is crucial: open source is about freedom, not just price. A piece of software can be free to download but still lock you in if you cannot modify it or share it. LibreOffice is truly free in the deeper sense.
+
+### A3. The Ethics of Open Source
+
+Open source is not just a licensing model—it is a statement about how knowledge and tools should be shared.
+
+**Should All Software Be Open Source?**
+
+**Argument for:** Software controls more and more of our lives—from the cars we drive to the medical devices that keep us alive. When software is proprietary, users cannot verify what it does, fix bugs, or adapt it to their needs. Secret software is a threat to autonomy, security, and democracy. Governments should require that publicly funded software be open source. Critical infrastructure should be open for security auditing. In an ideal world, all software would be open so that knowledge could be shared freely.
+
+**Argument against:** Software development requires massive investment. If all software were open source, how would companies like Adobe or Autodesk fund their work? Some software genuinely requires trade secrets to remain competitive. Moreover, open source does not automatically mean high quality or well-maintained. Many open-source projects lack funding, documentation, and support. Forcing all software to be open would likely kill innovation in industries where proprietary models have enabled breakthroughs.
+
+My view is that a middle path makes sense: infrastructure and public-interest software should be open source. Creative tools and consumer applications can reasonably be proprietary, but their file formats should be open to prevent lock-in.
+
+**Is It Ethical for Companies to Build Profitable Products on Free Community Labor?**
+
+This is a deeply contested question. Companies like Red Hat, Google, and Meta rely heavily on Linux and other open-source projects. They contribute back in different ways—Red Hat employs thousands of open-source developers, Google funds the Linux Foundation, Meta open-sources PyTorch.
+
+The ethical question turns on the nature of the relationship. When a company uses open-source software to build its business but does not contribute back—in code, funding, or community support—it is engaging in what some call "open-source parasitism." When a company actively supports the projects it depends on, it is a symbiotic relationship.
+
+In the case of LibreOffice, the problem was not that Oracle wanted to profit. The problem was that Oracle demanded control over the project while treating the community as a free labor force. They wanted to own the results of community labor without giving the community any say in how that labor was used.
+
+**'Standing on the Shoulders of Giants'**
+
+This phrase captures the essence of open source. Every line of code I write sits on top of layers of software built by others—the Linux kernel, the C compiler, the Python interpreter, countless libraries. None of us start from scratch. We build on what came before. Open source makes this visible and explicit. When I use open-source software, I can see whose shoulders I am standing on. Proprietary software hides those giants, pretending that the product emerged fully formed from the company that sells it.
+
+**Does Open Source Enable or Undermine Original Innovation?**
+
+Open source enables innovation by lowering the barriers to entry. A student in a developing country can build on the same tools as an engineer at Google. This democratization of access leads to more innovation, not less. Most of the foundational technologies of the internet—Linux, Apache, MySQL, Python, JavaScript—are open source. Open source does not undermine innovation; it accelerates it by ensuring that knowledge is shared rather than hoarded.
+
+---
+
+## Part B: Linux Footprint
+
+I installed LibreOffice on an Ubuntu 22.04 LTS system to document its footprint.
+
+### Installation Method
+
+LibreOffice is available through the standard Ubuntu repositories. I installed it using APT:
+
+```bash
+sudo apt update
+sudo apt install libreoffice
